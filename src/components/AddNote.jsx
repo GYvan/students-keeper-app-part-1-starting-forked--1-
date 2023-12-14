@@ -16,11 +16,14 @@ function CreateNote({ onAdd }) {
 
   // set it to empty after adding the note
   const handleAddClick = () => {
-    onAdd(note);
-    setNote({
-      title: "",
-      content: ""
-    });
+    // Check if either title or content is not empty
+    if (note.title.trim() !== "" || note.content.trim() !== "") {
+      onAdd(note);
+      setNote({
+        title: "",
+        content: ""
+      });
+    }
   };
 
   return (

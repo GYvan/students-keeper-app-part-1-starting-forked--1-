@@ -2,6 +2,7 @@ import React from "react";
 
 function Note({ id, title, content, onDelete }) {
   const handleDelete = () => {
+    console.log("the id is", id)
     onDelete(id);
   };
 
